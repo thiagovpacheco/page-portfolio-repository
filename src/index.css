@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+  --color-navy: #0F172A;
+  --color-blue: #2563EB;
+  --color-slate: #F0F9FF;
+  /* Soft Sky Blue */
+  --color-dark: #1E3A8A;
+  /* Soft Dark Blue */
+  --color-white: #FFFFFF;
+  --color-surface: #FFFFFF;
+
+  --font-heading: "Plus Jakarta Sans", "Outfit", sans-serif;
+  --font-emphasis: "Cormorant Garamond", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --radius-2xl: 2rem;
+  --radius-3xl: 3rem;
+}
+
+@layer base {
+  :root {
+    background-color: var(--color-slate);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer utilities {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  }
+
+  .glass-nav {
+    background: rgba(248, 250, 252, 0.85);
+    /* Slate 50 with opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
